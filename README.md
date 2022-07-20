@@ -24,5 +24,5 @@ Resources for bootstrapping a Terraform setup.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_tfstate_bucket_name"></a> [tfstate\_bucket\_name](#input\_tfstate\_bucket\_name) | n/a | `string` | n/a | yes |
+| <a name="input_tfstate_bucket_name"></a> [tfstate\_bucket\_name](#input\_tfstate\_bucket\_name) | Name of the Terraform bucket to create to store tfstate. | `string` | n/a | yes |
 <!-- END_TF_DOCS -->
