@@ -12,10 +12,10 @@ resource "aws_s3_bucket" "tfstate" {
   }
 }
 
-resource "aws_s3_bucket_public_access_block" "tfstate" { 
+resource "aws_s3_bucket_public_access_block" "tfstate" {
   bucket = aws_s3_bucket.tfstate.id
 
-  block_public_acls     = true
+  block_public_acls   = true
   block_public_policy = true
 }
 
