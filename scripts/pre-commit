@@ -2,5 +2,5 @@
 
 set -eo pipefail
 
-./scripts/format.sh
-./scripts/generate-readme.sh
+scripts/format.sh
+scripts/generate-readme.sh
