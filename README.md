@@ -25,4 +25,10 @@ Resources for bootstrapping a Terraform setup.
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
 | <a name="input_tfstate_bucket_name"></a> [tfstate\_bucket\_name](#input\_tfstate\_bucket\_name) | Name of the Terraform bucket to create to store tfstate. | `string` | n/a | yes |
+
+## Development
+
+Generation of this README and formatting of Terraform code is done via a Git pre-commit hook. To install run:
+
+    scripts/install-hooks.sh
 <!-- END_TF_DOCS -->

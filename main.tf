@@ -6,7 +6,7 @@
 
 
 resource "aws_s3_bucket" "tfstate" {
-  bucket = var.tfstate_bucket_name
+  bucket_prefix = "tfstate"
   lifecycle {
     prevent_destroy = true
   }
@@ -45,7 +45,7 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "tfstate" {
 }
 
 resource "aws_dynamodb_table" "tflocks" {
-  name         = "tflocks"
+  name_prefix  = "tflocks"
   hash_key     = "LockID"
   billing_mode = "PAY_PER_REQUEST"
   attribute {
