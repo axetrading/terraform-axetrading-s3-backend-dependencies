@@ -44,8 +44,12 @@ resource "aws_s3_bucket_server_side_encryption_configuration" "tfstate" {
   }
 }
 
+locals {
+  suffix = trimprefix(aws_s3_bucket.tfstate.id, aws_s3_bucket.tfstate.bucket_prefix)
+}
+
 resource "aws_dynamodb_table" "tflocks" {
-  name_prefix  = "tflocks"
+  name         = "tflocks${local.suffix}"
   hash_key     = "LockID"
   billing_mode = "PAY_PER_REQUEST"
   attribute {

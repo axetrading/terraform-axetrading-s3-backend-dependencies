@@ -20,11 +20,14 @@ Resources for bootstrapping a Terraform setup.
 | [aws_s3_bucket_server_side_encryption_configuration.tfstate](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_server_side_encryption_configuration) | resource |
 | [aws_s3_bucket_versioning.tfstate](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_versioning) | resource |
 
-## Inputs
+## Outputs
 
-| Name | Description | Type | Default | Required |
-|------|-------------|------|---------|:--------:|
-| <a name="input_tfstate_bucket_name"></a> [tfstate\_bucket\_name](#input\_tfstate\_bucket\_name) | Name of the Terraform bucket to create to store tfstate. | `string` | n/a | yes |
+| Name | Description |
+|------|-------------|
+| <a name="output_tflocks_table_arn"></a> [tflocks\_table\_arn](#output\_tflocks\_table\_arn) | ARN of the DynamoDB table for locking Terraform state |
+| <a name="output_tflocks_table_name"></a> [tflocks\_table\_name](#output\_tflocks\_table\_name) | Name of the DynamoDB table for locking Terraform state |
+| <a name="output_tfstate_bucket_arn"></a> [tfstate\_bucket\_arn](#output\_tfstate\_bucket\_arn) | ARN of the S3 bucket for storing Terraform state |
+| <a name="output_tfstate_bucket_name"></a> [tfstate\_bucket\_name](#output\_tfstate\_bucket\_name) | Name of the S3 bucket for storing Terraform state |
 
 ## Development
 
