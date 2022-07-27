@@ -11,4 +11,5 @@ terraform {
 
 module "test" {
   source = "../"
+  id = "testid"
 }

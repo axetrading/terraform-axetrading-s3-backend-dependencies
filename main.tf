@@ -2,11 +2,14 @@
  * # Terraform S3 Backend Depdendencies
  *
  * Resources for bootstrapping a Terraform setup.
+ *
+ * The id parameter is used to prefix the tfstate bucket and tflocks table. It is recommended to set this
+ * to the AWS account name and use these prefixes to find the right bucket/table, which protects you from
+ * accidentally running Terraform in the wrong account.
  */
 
-
 resource "aws_s3_bucket" "tfstate" {
-  bucket_prefix = "tfstate"
+  bucket_prefix = "tfstate-${var.id}-"
 }
 
 resource "aws_s3_bucket_public_access_block" "tfstate" {
@@ -46,7 +49,7 @@ locals {
 }
 
 resource "aws_dynamodb_table" "tflocks" {
-  name         = "tflocks${local.suffix}"
+  name         = "tflocks-${var.id}-${local.suffix}"
   hash_key     = "LockID"
   billing_mode = "PAY_PER_REQUEST"
   attribute {

@@ -9,6 +9,8 @@ s3 = boto3.client('s3')
 tfstate_bucket_name = outputs['tfstate_bucket_name']['value']
 tfstate_bucket_arn = outputs['tfstate_bucket_arn']['value']
 
+assert tfstate_bucket_name.startswith('tfstate-testid-'), 'tfstate prefix'
+
 assert tfstate_bucket_arn == f'arn:aws:s3:::{tfstate_bucket_name}', 'tfstate bucket ARN'
 
 block_config = s3.get_public_access_block(Bucket=tfstate_bucket_name)['PublicAccessBlockConfiguration']
@@ -25,6 +27,8 @@ dynamodb = boto3.client('dynamodb')
 
 tflocks_table_name = outputs['tflocks_table_name']['value']
 tflocks_table_arn = outputs['tflocks_table_arn']['value']
+
+assert tflocks_table_name.startswith('tflocks-testid-'), 'tflocks prefix'
 
 tflocks_table = dynamodb.describe_table(TableName=tflocks_table_name)['Table']
 assert len(tflocks_table['KeySchema']) == 1, 'one key'

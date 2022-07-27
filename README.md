@@ -3,6 +3,10 @@
 
 Resources for bootstrapping a Terraform setup.
 
+The id parameter is used to prefix the tfstate bucket and tflocks table. It is recommended to set this
+to the AWS account name and use these prefixes to find the right bucket/table, which protects you from
+accidentally running Terraform in the wrong account.
+
 ## Providers
 
 | Name | Version |
@@ -19,6 +23,12 @@ Resources for bootstrapping a Terraform setup.
 | [aws_s3_bucket_public_access_block.tfstate](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_public_access_block) | resource |
 | [aws_s3_bucket_server_side_encryption_configuration.tfstate](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_server_side_encryption_configuration) | resource |
 | [aws_s3_bucket_versioning.tfstate](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/s3_bucket_versioning) | resource |
+
+## Inputs
+
+| Name | Description | Type | Default | Required |
+|------|-------------|------|---------|:--------:|
+| <a name="input_id"></a> [id](#input\_id) | Unique identifier to include in the name. Use of AWS account name recommended (serves as validation you're in the correct account). | `string` | n/a | yes |
 
 ## Outputs
 
