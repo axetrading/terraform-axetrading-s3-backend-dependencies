@@ -7,11 +7,18 @@ The id parameter is used to prefix the tfstate bucket and tflocks table. It is r
 to the AWS account name and use these prefixes to find the right bucket/table, which protects you from
 accidentally running Terraform in the wrong account.
 
+## Requirements
+
+| Name | Version |
+|------|---------|
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | ~> 4.22 |
+| <a name="requirement_github"></a> [github](#requirement\_github) | ~> 4.0 |
+
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_aws"></a> [aws](#provider\_aws) | n/a |
+| <a name="provider_aws"></a> [aws](#provider\_aws) | ~> 4.22 |
 
 ## Resources
 
